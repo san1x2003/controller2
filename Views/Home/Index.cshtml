@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Shop.Models.Employee>
+@{   
+    Layout = null;
+}
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <title>Магазин Электроники</title>
+</head>
+<body>
+    <h3>Сотрудники</h3>
+    <table>
+        <tr>
+            <td>ФИО</td>
+            <td>Почта</td>
+            <td>Идентификатор</td>
+            <td>Номер Должности</td>
+            <td></td>
+        </tr>
+        @foreach (var employee in Model)
+            {
+            <tr>
+                <td>@employee.full_name</td>
+                <td>@employee.email</td>
+                <td>@employee.identifier</td>
+                <td>@employee.id_post</td>
+                <td><a href="~/Home/Buy/@employee.Id">Открыть</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
